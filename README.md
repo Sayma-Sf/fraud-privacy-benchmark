@@ -3,13 +3,15 @@
 [![CI](https://github.com/Sayma-Sf/fraud-privacy-benchmark/actions/workflows/ci.yml/badge.svg)](https://github.com/Sayma-Sf/fraud-privacy-benchmark/actions/workflows/ci.yml)
 ![Python 3.11](https://img.shields.io/badge/python-3.11-blue)
 ![License: MIT](https://img.shields.io/badge/license-MIT-green)
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://fraud-privacy-benchmark.streamlit.app)
 
 **How much fraud-detection accuracy does it cost to protect cardholders' privacy?**
 This project measures that on 284,807 real card transactions, two ways: training the model
 with **differential privacy**, and replacing the data with **synthetic data**.
 
-**Live demo:** _add the Streamlit Community Cloud link here after deploying (see [Deploy the demo](#deploy-the-demo))._
-Move the privacy slider and watch precision, recall and AUPRC respond.
+**Live demo: [fraud-privacy-benchmark.streamlit.app](https://fraud-privacy-benchmark.streamlit.app)**.
+Move the privacy slider and watch precision, recall and AUPRC respond. (On the free tier the
+app sleeps when idle; if you see "get this app back up", it wakes in under a minute.)
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="reports/figures/privacy_utility_dark.png">
