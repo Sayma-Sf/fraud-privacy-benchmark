@@ -136,7 +136,7 @@ with tab_dp:
     left, right = st.columns([3, 2])
     with left:
         st.subheader("Accuracy across privacy budgets")
-        st.altair_chart(alt.layer(*layers).properties(height=360), use_container_width=True)
+        st.altair_chart(alt.layer(*layers).properties(height=360), width="stretch")
     with right:
         st.subheader(f"Precision vs recall at ε = {choice}")
         dp_name = f"DP model, ε = {choice}"
@@ -167,7 +167,7 @@ with tab_dp:
             ),
             unsafe_allow_html=True,
         )
-        st.altair_chart(pr_chart.properties(height=320), use_container_width=True)
+        st.altair_chart(pr_chart.properties(height=320), width="stretch")
 
     with st.expander("All numbers"):
         table = sweep[["label", "runs", "auprc_mean", "auprc_std", "auprc_p10", "auprc_p90",
@@ -180,7 +180,7 @@ with tab_dp:
             }).style.format({"Mean AUPRC": "{:.3f}", "Std": "{:.3f}", "P10": "{:.3f}",
                              "P90": "{:.3f}", "Kept vs no noise": "{:.0%}", "Recall": "{:.0%}",
                              "Precision": "{:.0%}"}),
-            hide_index=True, use_container_width=True,
+            hide_index=True, width="stretch",
         )
 
 # --- Synthetic data ----------------------------------------------------------------------------
@@ -209,7 +209,7 @@ with tab_synth:
             text=alt.Text("auprc:Q", format=".2f")
         )
         chart = bar.mark_bar(size=24, cornerRadiusEnd=4, color=PALETTE["series"][0]) + values
-        st.altair_chart(chart.properties(height=60 * len(bars) + 40), use_container_width=True)
+        st.altair_chart(chart.properties(height=60 * len(bars) + 40), width="stretch")
 
         rows = []
         for kind, res in synthetic.items():
@@ -228,7 +228,7 @@ with tab_synth:
                 "Closer to training rows (all)": "{:.0%}",
                 "Closer to training rows (fraud)": "{:.0%}",
             }),
-            hide_index=True, use_container_width=True,
+            hide_index=True, width="stretch",
         )
         st.markdown(
             "**Reading the memorisation check.** For each fake row, is its nearest real row one "
