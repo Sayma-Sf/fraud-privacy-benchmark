@@ -1,0 +1,18 @@
+# Everything needed to download the data, rerun the benchmark, and run lint + tests.
+#
+# Compiled packages are pinned to widely used early-2025 releases. Newer wheels work
+# fine on Linux and macOS, but Windows Smart App Control blocks native binaries it
+# has not seen often enough, and these versions load cleanly with it switched on.
+-r requirements.txt
+scikit-learn==1.6.1
+scipy==1.15.3
+lightgbm==4.7.0
+diffprivlib==0.6.6
+sdv==1.38.3
+torch==2.6.0
+matplotlib==3.10.1
+kiwisolver==1.4.8
+fonttools==4.56.0
+kaggle==2.2.4
+pytest==9.1.1
+ruff==0.11.13
